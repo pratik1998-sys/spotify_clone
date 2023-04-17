@@ -1,9 +1,9 @@
-import './App.css'
+import './App.scss'
 import { LeftMenu, RightMenu, MainMenu } from './Containers/index'
 
 function App() {
   return (
-    <div className='App'>
+    <div className='app'>
       <LeftMenu />
       <MainMenu />
       <RightMenu />

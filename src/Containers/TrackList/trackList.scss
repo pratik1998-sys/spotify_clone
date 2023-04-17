@@ -1,0 +1,105 @@
+.trackList_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  @media screen and (max-width: 550px) {
+    display: none;
+  }
+
+  hr {
+    color: #848484;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    display: flex;
+    img {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
+    }
+    p {
+      display: flex;
+      flex-direction: column;
+      margin-left: 15px;
+      color: #848484;
+
+      span {
+        font-size: 12px;
+        color: #656363;
+      }
+    }
+  }
+  .controls {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    i {
+      color: #848484;
+      font-size: 18px;
+      &:hover {
+        color: #f1f1f1;
+        cursor: pointer;
+      }
+    }
+    input {
+      height: 5px;
+      border-radius: 10px;
+      position: relative;
+      border: none;
+      outline: none;
+      appearance: none;
+      background-color: rgba(255, 255, 255, 0.2);
+
+      /**Safari and Chrome**/
+      &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        background: #49e12e;
+        width: 50%;
+        height: 100%;
+        border-radius: 10px;
+        z-index: 2;
+        transition: width 250ms linear;
+      }
+      &::-webkit-slider-thumb {
+        appearance: none;
+        cursor: pointer;
+        position: relative;
+        width: 10px;
+        height: 20px;
+        box-sizing: border-box;
+        transition: all 250ms linear;
+        border-radius: 10px;
+        border: 2px solid #000;
+        background: #f1f1f1;
+        z-index: 3;
+      }
+
+      /**Firefox**/
+      &::-moz-progress-bar {
+        background: #49e12e;
+        width: 50%;
+        height: 100%;
+        border-radius: 10px;
+        z-index: 2;
+        transition: width 250ms linear;
+      }
+      &::-moz-range-thumb {
+        width: 10px;
+        height: 20px;
+        box-sizing: border-box;
+        transition: all 250ms linear;
+        border-radius: 10px;
+        border: 2px solid #000;
+        background: #f1f1f1;
+        z-index: 3;
+      }
+    }
+  }
+}
