@@ -43,13 +43,6 @@
           overflow: hidden;
           display: inline;
         }
-        .trash {
-          &:hover {
-            color: rgb(189, 30, 30);
-            scale: 1.2;
-            cursor: pointer;
-          }
-        }
         &:hover {
           .list {
             color: #f1f1f1;
@@ -58,6 +51,15 @@
             color: #f1f1f1;
             cursor: pointer;
           }
+        }
+      }
+      li.active {
+        .list {
+          color: #f1f1f1;
+        }
+        p {
+          color: #f1f1f1;
+          cursor: pointer;
         }
       }
     }

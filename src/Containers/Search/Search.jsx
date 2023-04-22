@@ -1,8 +1,9 @@
 import React from 'react'
 import './search.scss'
+import UserWrapper from '../../HOC/UserWrapper'
 
 const Search = () => {
-  return <div>Search</div>
+  return <div className='search'>Search</div>
 }
 
-export default Search
+export default UserWrapper(Search)

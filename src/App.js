@@ -10,7 +10,7 @@ import {
   Library,
   Player,
 } from './Containers/index'
-import { setToken } from './features/userLoginSlice'
+import { setToken, getUserDetails } from './features/userLoginSlice'
 
 function App() {
   const { token } = useSelector((state) => state.userLogin)
@@ -22,6 +22,7 @@ function App() {
       const token = hash.substring(1).split('&')[0].split('=')[1]
       //console.log(token)
       dispatch(setToken(token))
+      dispatch(getUserDetails(token))
     }
   }, [token, dispatch])
 

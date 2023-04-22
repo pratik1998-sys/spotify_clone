@@ -1,8 +1,9 @@
 import React from 'react'
 import './home.scss'
+import UserWrapper from '../../HOC/UserWrapper'
 
 const Home = () => {
-  return <div>Home</div>
+  return <div className='home'>Home</div>
 }
 
-export default Home
+export default UserWrapper(Home)

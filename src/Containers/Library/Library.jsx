@@ -1,8 +1,9 @@
 import React from 'react'
+import UserWrapper from '../../HOC/UserWrapper'
 import './library.scss'
 
 const Library = () => {
-  return <div>Library</div>
+  return <div className='library'>Library</div>
 }
 
-export default Library
+export default UserWrapper(Library)
