@@ -5,7 +5,8 @@ const url = 'https://api.spotify.com/v1/me/playlists'
 
 const initialState = {
   playlists: [],
-  isLoading: false,
+  currentPlaylistDetails: {},
+  isLoading: true,
   isError: false,
   error: '',
 }
@@ -20,7 +21,7 @@ export const getUserPlaylist = createAsyncThunk(
           'Content-Type': 'application/json',
         },
       })
-      console.log(response.data)
+      // console.log(response.data)
       return response.data
     } catch (error) {
       return error.message
@@ -31,7 +32,13 @@ export const getUserPlaylist = createAsyncThunk(
 const userPlaylistSlice = createSlice({
   name: 'userPlaylist',
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    setCurrentPlaylistDetails: (state, action) => {
+      state.currentPlaylistDetails = state.playlists.items.filter(
+        (playlist) => playlist.id === action.payload
+      )[0]
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getUserPlaylist.pending, (state, action) => {
       state.isLoading = true
@@ -52,6 +59,6 @@ const userPlaylistSlice = createSlice({
 // Extract the action creators object and the reducer
 const { actions, reducer } = userPlaylistSlice
 // Extract and export each action creator by name
-export const {} = actions
+export const { setCurrentPlaylistDetails } = actions
 // Export the reducer, either as a default or named export
 export default reducer

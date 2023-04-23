@@ -9,6 +9,7 @@ import {
   Search,
   Library,
   Player,
+  Playlist,
 } from './Containers/index'
 import { setToken, getUserDetails } from './features/userLoginSlice'
 
@@ -37,6 +38,7 @@ function App() {
             <Route path='/' exact element={<Home />} />
             <Route path='/search' exact element={<Search />} />
             <Route path='/library' exact element={<Library />} />
+            <Route path='/playlist/:id' exact element={<Playlist />} />
           </Routes>
           <Player />
         </BrowserRouter>

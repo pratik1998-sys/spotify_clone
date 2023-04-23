@@ -8,6 +8,7 @@ import Home from './Home/Home'
 import Search from './Search/Search'
 import Library from './Library/Library'
 import Player from './Player/Player'
+import Playlist from './Playlist/Playlist'
 
 export {
   LeftMenu,
@@ -20,4 +21,5 @@ export {
   Search,
   Library,
   Player,
+  Playlist,
 }

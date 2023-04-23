@@ -5,7 +5,7 @@ import userPlaylistReducer from './features/userPlaylistSlice'
 
 const store = configureStore({
   reducer: {
-    playList: playListReducer,
+    playlist: playListReducer,
     userLogin: userLoginReducer,
     userPlaylist: userPlaylistReducer,
   },

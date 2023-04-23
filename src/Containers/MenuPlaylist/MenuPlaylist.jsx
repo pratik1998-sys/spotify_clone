@@ -3,7 +3,11 @@ import './menuPlaylist.scss'
 import { FaPlus } from 'react-icons/fa'
 import { BsMusicNoteList } from 'react-icons/bs'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUserPlaylist } from '../../features/userPlaylistSlice'
+import {
+  getUserPlaylist,
+  setCurrentPlaylistDetails,
+} from '../../features/userPlaylistSlice'
+import { Link } from 'react-router-dom'
 
 const MenuPlaylist = () => {
   const dispatch = useDispatch()
@@ -11,7 +15,7 @@ const MenuPlaylist = () => {
   const { playlists, isLoading, isError, error } = useSelector(
     (state) => state.userPlaylist
   )
-  const [currentPlaylist, setCurrentPlaylist] = useState('')
+  const [currentPlaylistName, setCurrentPlaylistName] = useState('')
 
   useEffect(() => {
     if (token) dispatch(getUserPlaylist(token))
@@ -34,15 +38,18 @@ const MenuPlaylist = () => {
             return (
               <li
                 key={item.id}
-                className={currentPlaylist === item.name ? 'active' : ''}
+                className={currentPlaylistName === item.name ? 'active' : ''}
                 onClick={() => {
-                  setCurrentPlaylist(item.name)
+                  setCurrentPlaylistName(item.name)
+                  dispatch(setCurrentPlaylistDetails(item.id))
                 }}
               >
-                <i className='list'>
-                  <BsMusicNoteList />
-                </i>
-                <p>{item.name}</p>
+                <Link to={`/playlist/${item.id}`}>
+                  <i className='list'>
+                    <BsMusicNoteList />
+                  </i>
+                  <p>{item.name}</p>
+                </Link>
               </li>
             )
           })}
