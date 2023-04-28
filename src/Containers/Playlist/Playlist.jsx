@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import './playlist.scss'
 import UserWrapper from '../../HOC/UserWrapper'
 import { useSelector, useDispatch } from 'react-redux'
@@ -6,6 +6,7 @@ import { Banner } from '../index'
 import { useParams } from 'react-router-dom'
 import { getCurrentPlaylist } from '../../features/playListSlice'
 import { MdOutlineWatchLater } from 'react-icons/md'
+import SingleSong from '../../Components/SingleSong/SingleSong'
 
 const Playlist = () => {
   const { id } = useParams()
@@ -43,7 +44,7 @@ const Playlist = () => {
             </div>
             <ul className='songs'>
               {currentPlaylist?.items?.map((song) => {
-                return <li key={song?.track?.id}>{song?.track?.name}</li>
+                return <SingleSong song={song} key={song?.track?.id} />
               })}
             </ul>
           </div>

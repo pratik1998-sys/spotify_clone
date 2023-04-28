@@ -1,0 +1,40 @@
+.single-track {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  li {
+    width: 25%;
+    padding-left: 0.5rem;
+    cursor: pointer;
+    color: #e2e2e2;
+    &:nth-child(1) {
+      width: 40%;
+    }
+    &:nth-child(4) {
+      width: 10%;
+    }
+  }
+  .title__container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    img {
+      height: 40px;
+      width: 40px;
+      object-fit: contain;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 1rem;
+      p {
+        &:nth-child(2) {
+          color: #848484;
+        }
+      }
+    }
+  }
+}

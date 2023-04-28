@@ -1,13 +1,10 @@
 import React from 'react'
-import { FaCheck, FaEllipsisH, FaHeadphones } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
-import artist from '../../img/artist.jpg'
-import check from '../../img/check.png'
 import './banner.scss'
 
 const Banner = () => {
   const { currentPlaylistDetails } = useSelector((state) => state.userPlaylist)
-  console.log(currentPlaylistDetails)
+  //console.log(currentPlaylistDetails)
   const { images, name, id, tracks, owner } = currentPlaylistDetails
 
   return (
