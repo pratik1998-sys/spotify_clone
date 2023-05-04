@@ -1,0 +1,38 @@
+.item__container {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+
+  .img__container {
+    width: 100%;
+    height: 66%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 90%;
+      height: 100%;
+      object-fit: cover;
+      margin-top: 0.5rem;
+      border-radius: 6px;
+    }
+  }
+  .description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0.5rem 0.5rem;
+
+    p {
+      font-size: 0.9rem;
+      &:nth-child(1) {
+        color: #fff;
+      }
+      &:nth-child(2) {
+        color: #848484;
+      }
+    }
+  }
+}

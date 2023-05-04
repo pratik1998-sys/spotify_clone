@@ -4,7 +4,7 @@ import { getDate } from '../../utilities/getDate'
 import { getTimeDuration } from '../../utilities/getTimeDuration'
 
 const SingleSong = ({ song }) => {
-  console.log(song)
+  //console.log(song)
   const { added_at, track } = song
 
   return (
